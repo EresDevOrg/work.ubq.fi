@@ -8,12 +8,12 @@ on:
 
 jobs:
   deploy-to-cloudflare:
-    name: Automatic Cloudflare Deploy
+    name: Automatic Cloudflare Deploy EresDevOrg
     runs-on: ubuntu-22.04
     steps:
       - name: Deploy to Cloudflare
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        uses: ubiquity/cloudflare-deploy-action@main
+        uses: EresDevOrg/cloudflare-deploy-action-2@main
         with:
           repository: ${{ github.repository }}
           production_branch: ${{ github.event.repository.default_branch }}
